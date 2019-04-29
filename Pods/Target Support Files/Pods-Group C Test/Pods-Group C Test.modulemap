@@ -1,0 +1,6 @@
+framework module Pods_Group_C_Test {
+  umbrella header "Pods-Group C Test-umbrella.h"
+
+  export *
+  module * { export * }
+}
