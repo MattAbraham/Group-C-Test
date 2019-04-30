@@ -23,27 +23,27 @@ class ViewController: UIViewController {
 //
 //    }
     
+
     func upload(_ image: UIImage) {
         let storage = Storage.storage()
         let imagesRef = storage.reference(withPath: "image")
         let data = image.jpeg(.medium)!
-        let uploadTask = imagesRef.putData(data, metadata: nil) { meta, error in
+        imagesRef.putData(data, metadata: nil) { meta, error in
             if (error != nil) {
                 print("Error \(error?.localizedDescription)")
             } else {
                 print("Upload Complete \(data)")
             }
         }
-        uploadTask.observe(.progress) { [weak self] (snapshot) in
-            guard let strongSelf = self else { return }
-            guard let progress = snapshot.progress else { return }
-            strongSelf.progressView.progress = Float(progress.fractionCompleted)
-        }
-            
+//        .observe(.progress) { [weak self] (snapshot) in
+//            guard let strongSelf = self else { return }
+//            guard let progress = snapshot.progress else { return }
+//            strongSelf.progressView.progress = Float(progress.fractionCompleted)
+//        }
     }
+}
     
 
-}
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
