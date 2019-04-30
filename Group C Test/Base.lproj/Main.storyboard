@@ -17,21 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-VS-bog">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-VS-bog">
                                 <rect key="frame" x="163" y="132" width="49" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YKf-jR-o67"/>
                                 </connections>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Ii-FBJ">
+                                <rect key="frame" x="51" y="170" width="273" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hQ9-VS-bog" firstAttribute="centerX" secondItem="yS6-Ii-FBJ" secondAttribute="centerX" id="M7v-xg-meu"/>
+                            <constraint firstItem="hQ9-VS-bog" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O3z-qh-pk3"/>
+                            <constraint firstItem="hQ9-VS-bog" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="UKM-EX-Q32"/>
+                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="gPZ-PN-5L5"/>
+                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="top" secondItem="hQ9-VS-bog" secondAttribute="bottom" constant="8" symbolic="YES" id="qOx-CW-i8Z"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="progressView" destination="yS6-Ii-FBJ" id="ikz-Cq-MRu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
