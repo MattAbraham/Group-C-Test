@@ -6,7 +6,7 @@ target 'Group C Test' do
   use_frameworks!
 
   pod 'Firebase/Core'
-  pod 'Firebase/Database'
+  pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
 

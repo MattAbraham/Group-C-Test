@@ -17,28 +17,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Ii-FBJ">
+                                <rect key="frame" x="51" y="211" width="273" height="2"/>
+                            </progressView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHf-tv-n0f">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-VS-bog">
-                                <rect key="frame" x="163" y="132" width="49" height="30"/>
+                                <rect key="frame" x="163" y="221" width="49" height="30"/>
                                 <state key="normal" title="Upload"/>
                                 <connections>
                                     <action selector="uploadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YKf-jR-o67"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Ii-FBJ">
-                                <rect key="frame" x="51" y="170" width="273" height="2"/>
-                            </progressView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZI-qA-Zty">
+                                <rect key="frame" x="51" y="121" width="273" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hQ9-VS-bog" firstAttribute="centerX" secondItem="yS6-Ii-FBJ" secondAttribute="centerX" id="M7v-xg-meu"/>
-                            <constraint firstItem="hQ9-VS-bog" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O3z-qh-pk3"/>
-                            <constraint firstItem="hQ9-VS-bog" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="112" id="UKM-EX-Q32"/>
-                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="gPZ-PN-5L5"/>
-                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="top" secondItem="hQ9-VS-bog" secondAttribute="bottom" constant="8" symbolic="YES" id="qOx-CW-i8Z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yS6-Ii-FBJ" secondAttribute="trailing" constant="35" id="0Qj-Q1-1he"/>
+                            <constraint firstItem="fHf-tv-n0f" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ISV-4q-pIM"/>
+                            <constraint firstItem="fHf-tv-n0f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cii-Ux-TyJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hQ9-VS-bog" secondAttribute="trailing" constant="163" id="kll-Ub-NbZ"/>
+                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="nSF-6M-3En"/>
+                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="191" id="rYC-Ek-Cyj"/>
+                            <constraint firstItem="hQ9-VS-bog" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163" id="tcD-82-kcW"/>
+                            <constraint firstItem="hQ9-VS-bog" firstAttribute="top" secondItem="yS6-Ii-FBJ" secondAttribute="bottom" constant="8" id="vge-vX-uvS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="captionText" destination="7ZI-qA-Zty" id="j9Z-RV-nRh"/>
+                        <outlet property="imagePreview" destination="fHf-tv-n0f" id="yyD-UE-74a"/>
                         <outlet property="progressView" destination="yS6-Ii-FBJ" id="ikz-Cq-MRu"/>
                     </connections>
                 </viewController>
