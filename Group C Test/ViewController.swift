@@ -9,7 +9,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var captionText: UITextField!
     var post = Post()
     
-    @IBAction func uploadButton(_ sender: AnyObject) {
+    @IBAction func getPhotoButton(_ sender: AnyObject) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.mediaTypes = [kUTTypeImage as String]
@@ -17,15 +17,19 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @IBAction func uploadButton(_ sender: Any) {
         let image = UIImage(named: "demo")!
         save(post)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        let image = UIImage(named: "demo")!
+//        save(post)
+//    }
     
     
     func save(_ post: Post) {
@@ -71,6 +75,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         let image = info[.originalImage] as! UIImage
         post.image = image
         post.caption = Date().description
+//        post.caption = captionText.text
         dismiss(animated:true, completion: nil)
     }
 }
