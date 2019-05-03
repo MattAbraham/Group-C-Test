@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBAction func uploadButton(_ sender: Any) {
         let image = UIImage(named: "demo")!
         save(post)
-
+  
     }
     
     override func viewDidLoad() {
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         let data = image.jpegData(compressionQuality: 0.7)!
         let meta = StorageMetadata()
         meta.contentType = "image/jpeg"
-        
+
         //3. Save image to storage first
         imageStorageRef.putData(data, metadata: meta) { storageMeta, error in
             completion(storageMeta, error)
@@ -70,82 +70,7 @@ class ViewController: UIViewController {
             }
     }
     }
-        
-        
-        
-        //4. Save the post caption & download URL
-        
-//        let databaseRef = database.reference().child("posts")
-//        databaseRef.observeEventType(.ChildAdded, withBlock: { (snapshot) in
-//            let downloadURL = snapshot.value() as! String
-//            let storageRef = storage.referenceFromURL(downloadURL)
-//            storageRef.dataWithMaxSize(1 * 1024 * 1024) { (data, error) -> Void in
-//                let pic = UIImage(data: data)
-//                picArray.append(pic)
-//            })
-//        })
-        
-        
-        
-//        let gsReference = Storage.storage().reference(forURL: "imageDownloadURL")
-//        let imageRef = imageStorageRef.child("0C6041CD-D30F-452A-9A04-885AD4E6442C")
-//        let localURL = URL (string: "path/to/image")
-//        let downloadTask = imageRef.write(toFile: localURL) { URL, error in
-//            if let error = error {
-//                //oopsie theres an error
-//                print("error")
-//            } else {
-//                print("\(localURL)")
-//                //Local file URL for "images/island.jpg" is returned
-//            }
-//            let observer = downloadTask.observe(.progress) { snapshot in
-//
-//            }
-//        }
-        
-//        let ref = imageStorageRef.child("0C6041CD-D30F-452A-9A04-885AD4E6442C")
-//        let imageView: UIImageView = self.imagePreview
-//        let placeholderImage = UIImage(named: "demo")
-//        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-    
-    
-
-
-
-    
-//    func download(){
-//    if let imageDownloadURL = post.imageDownloadURL{
-//        let imageStorageReference = Storage.storage().reference(forURL: "imageDownloadURL")
-//        imageStorageReference.getData(maxSize: 2 * 1024 * 1024, completion: { [weak self](data, error) in
-//            if let error = error {
-//                print("error downloading image \(error)")
-//            } else {
-//                //success
-//                print("SUCCESS!!!!")
-//                if let imageData = data {
-//                    DispatchQueue.main.async {
-//                        //imageview
-//                        let image = UIImage(data: imageData)
-//                        self?.imagePreview.image = image
-//                    }
-//                }
-//            }
-//        })
-//    }
-//    }
-    
-    
-    
-    
 }
-
-//    let imageRef = Storage.storage().reference().child("posts").observe(.childAdded)
-//    { (snapshot) in
-//        print(snapshot.value)
-    
-
-
-
 
     
 
