@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     @IBAction func uploadButton(_ sender: Any) {
         let image = UIImage(named: "demo")!
         save(post)
-        download()
+
     }
     
     override func viewDidLoad() {
@@ -39,6 +39,7 @@ class ViewController: UIViewController {
             let ref = Firestore.firestore().collection("posts").document()
             post.imageDownloadURL = storageMeta?.name
             ref.setData(post.toDict()) { err in
+            self.loadImages()
             }
         }
     }
@@ -59,6 +60,15 @@ class ViewController: UIViewController {
         imageStorageRef.putData(data, metadata: meta) { storageMeta, error in
             completion(storageMeta, error)
         }
+    }
+    
+    func loadImages() {
+    let ref = Firestore.firestore().collection("posts")
+        ref.getDocuments { snapshot, error in
+            for document in snapshot!.documents {
+            print(document.data())
+            }
+    }
     }
         
         
@@ -103,26 +113,26 @@ class ViewController: UIViewController {
 
 
     
-    func download(){
-    if let imageDownloadURL = post.imageDownloadURL{
-        let imageStorageReference = Storage.storage().reference(forURL: "imageDownloadURL")
-        imageStorageReference.getData(maxSize: 2 * 1024 * 1024, completion: { [weak self](data, error) in
-            if let error = error {
-                print("error downloading image \(error)")
-            } else {
-                //success
-                print("SUCCESS!!!!")
-                if let imageData = data {
-                    DispatchQueue.main.async {
-                        //imageview
-                        let image = UIImage(data: imageData)
-                        self?.imagePreview.image = image
-                    }
-                }
-            }
-        })
-    }
-    }
+//    func download(){
+//    if let imageDownloadURL = post.imageDownloadURL{
+//        let imageStorageReference = Storage.storage().reference(forURL: "imageDownloadURL")
+//        imageStorageReference.getData(maxSize: 2 * 1024 * 1024, completion: { [weak self](data, error) in
+//            if let error = error {
+//                print("error downloading image \(error)")
+//            } else {
+//                //success
+//                print("SUCCESS!!!!")
+//                if let imageData = data {
+//                    DispatchQueue.main.async {
+//                        //imageview
+//                        let image = UIImage(data: imageData)
+//                        self?.imagePreview.image = image
+//                    }
+//                }
+//            }
+//        })
+//    }
+//    }
     
     
     
