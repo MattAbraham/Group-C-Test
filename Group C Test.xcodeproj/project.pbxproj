@@ -14,7 +14,6 @@
 		6DA3F4682276F6E2004C43C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DA3F4672276F6E2004C43C1 /* Assets.xcassets */; };
 		6DA3F46B2276F6E2004C43C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DA3F4692276F6E2004C43C1 /* LaunchScreen.storyboard */; };
 		6DA3F4732276FCAF004C43C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6DA3F4722276FCAE004C43C1 /* GoogleService-Info.plist */; };
-		6DA3F475227701C7004C43C1 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA3F474227701C7004C43C1 /* UIImage+Extension.swift */; };
 		D53F37446DCA62A0FDC7E277 /* Pods_Group_C_Test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF19C2F15EBE8ECC0897BBF /* Pods_Group_C_Test.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,7 +28,6 @@
 		6DA3F46A2276F6E2004C43C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6DA3F46C2276F6E2004C43C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DA3F4722276FCAE004C43C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		6DA3F474227701C7004C43C1 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B7C865E20B3697C7BE00FBA7 /* Pods-Group C Test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Group C Test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Group C Test/Pods-Group C Test.debug.xcconfig"; sourceTree = "<group>"; };
 		EAF19C2F15EBE8ECC0897BBF /* Pods_Group_C_Test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Group_C_Test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,7 +76,6 @@
 				6DA3F4602276F6E0004C43C1 /* AppDelegate.swift */,
 				6D656DFF2279A5F80056A196 /* Post.swift */,
 				6DA3F4622276F6E0004C43C1 /* ViewController.swift */,
-				6DA3F474227701C7004C43C1 /* UIImage+Extension.swift */,
 				6DA3F4642276F6E0004C43C1 /* Main.storyboard */,
 				6DA3F4672276F6E2004C43C1 /* Assets.xcassets */,
 				6DA3F4692276F6E2004C43C1 /* LaunchScreen.storyboard */,
@@ -232,7 +229,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DA3F475227701C7004C43C1 /* UIImage+Extension.swift in Sources */,
 				6DA3F4632276F6E0004C43C1 /* ViewController.swift in Sources */,
 				6DA3F4612276F6E0004C43C1 /* AppDelegate.swift in Sources */,
 				6D656E002279A5F80056A196 /* Post.swift in Sources */,

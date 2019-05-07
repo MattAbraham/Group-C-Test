@@ -17,13 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yS6-Ii-FBJ">
-                                <rect key="frame" x="51" y="211" width="273" height="2"/>
-                            </progressView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fHf-tv-n0f">
                                 <rect key="frame" x="30" y="274" width="315" height="241"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZI-qA-Zty">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ZI-qA-Zty">
                                 <rect key="frame" x="51" y="121" width="273" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -36,8 +33,8 @@
                                     <action selector="uploadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cWE-Ly-ukN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-VS-bog">
-                                <rect key="frame" x="152" y="221" width="71" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQ9-VS-bog">
+                                <rect key="frame" x="152" y="221" width="69" height="30"/>
                                 <state key="normal" title="Get Photo"/>
                                 <connections>
                                     <action selector="getPhotoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tZB-69-Bw9"/>
@@ -46,28 +43,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="yS6-Ii-FBJ" secondAttribute="trailing" constant="35" id="0Qj-Q1-1he"/>
                             <constraint firstItem="7ZI-qA-Zty" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="101" id="71H-2K-S4R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Cr-0M-wGH" secondAttribute="trailing" constant="172" id="A97-49-7R9"/>
-                            <constraint firstItem="7ZI-qA-Zty" firstAttribute="trailing" secondItem="yS6-Ii-FBJ" secondAttribute="trailing" id="D46-DJ-tE7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0Cr-0M-wGH" secondAttribute="bottom" constant="63" id="MWr-13-KHA"/>
                             <constraint firstItem="0Cr-0M-wGH" firstAttribute="top" secondItem="fHf-tv-n0f" secondAttribute="bottom" constant="59" id="Nsg-qV-OJp"/>
                             <constraint firstItem="hQ9-VS-bog" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="152" id="Z5Y-Vc-Gl5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fHf-tv-n0f" secondAttribute="trailing" constant="30" id="Z8y-Xd-SbQ"/>
                             <constraint firstItem="0Cr-0M-wGH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="172" id="ZDB-op-fC4"/>
-                            <constraint firstItem="hQ9-VS-bog" firstAttribute="top" secondItem="yS6-Ii-FBJ" secondAttribute="bottom" constant="8" symbolic="YES" id="dYo-sg-AS1"/>
                             <constraint firstItem="fHf-tv-n0f" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="fOn-l2-l5f"/>
-                            <constraint firstItem="hQ9-VS-bog" firstAttribute="centerX" secondItem="yS6-Ii-FBJ" secondAttribute="centerX" id="fpz-Nb-Z9o"/>
-                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="35" id="nSF-6M-3En"/>
-                            <constraint firstItem="7ZI-qA-Zty" firstAttribute="leading" secondItem="yS6-Ii-FBJ" secondAttribute="leading" id="plO-EQ-r64"/>
-                            <constraint firstItem="yS6-Ii-FBJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="191" id="rYC-Ek-Cyj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="captionText" destination="7ZI-qA-Zty" id="j9Z-RV-nRh"/>
                         <outlet property="imagePreview" destination="fHf-tv-n0f" id="yyD-UE-74a"/>
-                        <outlet property="progressView" destination="yS6-Ii-FBJ" id="ikz-Cq-MRu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

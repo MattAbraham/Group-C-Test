@@ -4,7 +4,6 @@ import Firebase
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var imagePreview: UIImageView!
     @IBOutlet weak var captionText: UITextField!
     var post = Post()
@@ -16,17 +15,14 @@ class ViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     @IBAction func uploadButton(_ sender: Any) {
-        let image = UIImage(named: "demo")!
+        //        let image = UIImage(named: "demo")!
         save(post)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        let image = UIImage(named: "demo")!
-//        save(post)
-//    }
+
     func save(_ post: Post) {
         upload(post.image) { storageMeta, error in
             let ref = Firestore.firestore().collection("posts").document()
@@ -40,10 +36,6 @@ class ViewController: UIViewController {
     func upload(_ image: UIImage, completion: @escaping (StorageMetadata?, Error?) -> Void) {
 
         let uuid = UUID().uuidString
-        //1. Create new database reference
-        //let newPostRef = Database.database().reference().child("photoPost").childByAutoId()
-        //let newPostKey = newPostRef.key
-        //2. Create a new storage reference
         let imageStorageRef = Storage.storage().reference().child(uuid)
         let data = image.jpegData(compressionQuality: 0.7)!
         let meta = StorageMetadata()
@@ -57,11 +49,12 @@ class ViewController: UIViewController {
         ref.getDocuments { snapshot, error in
             for document in snapshot!.documents {
             print(document.data())
+//                let posts = Post(document: DocumentSnapshot)
+//                self.posts.append(posts)
             }
     }
     }
 }
-    
 
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
